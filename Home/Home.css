@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    font-family: Interstate,Lucida Grande,Arial,sans-serif;
+
+}
+.nav ul{  
+    background: #333;
+    font-family: Interstate,Lucida Grande,Arial,sans-serif;
+    font-weight: 30px;
+    height: 50px;
+    width: 100vw;
+    display:flex;
+    flex-direction:row;
+    position: fixed;
+    z-index: 999;
+}
+
+ul li{
+    list-style:none;
+    align-self: center;
+    padding-right:100px;
+
+
+}
+li a:hover {
+    color: rgb(255, 255, 255);
+    font-weight: solid;
+}  
+
+li a:hover .dropdown:hover .dropbtn {
+    background-color: black;
+}
+li.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:white;
+    min-width: 350px;
+    margin-top: 16px;
+}
+.noti{
+    color: black;
+    padding: 10px 0 10px 10px;
+    border: 1px solid rgb(167, 163, 163);
+    border-bottom: none;
+    font-size: 18px;
+}
+.notifi{
+    align-self: center;
+    border: 1px solid rgb(167, 163, 163);
+    padding: 30px 0 30px 110px ;
+    font-size: 15px;
+}
+.dropdown-content a:hover {
+    background-color: #0503030c;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+li a:hover .dropdown1:hover .dropbtn1 {
+    background-color: black;
+}
+li.dropdown1 {
+    display: inline-block;
+}
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color:white;
+    min-width: 240px;
+    margin-top: 16px;
+}
+.noti1{
+    color: black;
+    padding: 10px 0 10px 10px;
+    border: 1px solid rgb(167, 163, 163);
+    border-bottom: none;
+    font-size: 18px;
+}
+.notifi1{
+    border: 1px solid rgb(167, 163, 163);
+    padding: 30px 0 30px 0px ;
+    font-size: 15px;
+}
+.dropdown-content1 a:hover {
+    background-color: #0503030c;
+}
+.dropdown1:hover .dropdown-content1 {
+  display: block;
+}
+li a:hover .dropdown2:hover .dropbtn2 {
+    background-color: black;
+}
+li.dropdown2 {
+    display: inline-block;
+}
+.dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color:white;
+    min-width: 200px;
+    margin-top: 16px;
+    right: 100px;
+    border:1px solid rgb(167, 163, 163);
+}
+.noti2{
+    color: black;
+    padding:10px ;
+    font-size: 13px;
+}
+
+.dropdown-content2 a:hover {
+    color: black;
+    
+}
+.dropdown2:hover .dropdown-content2 {
+  display: block;}
+a{
+    text-decoration: none;
+    color: rgb(192, 192, 192);
+}
+#logo{    
+    background-color: rgb(223, 102, 58);
+    width: 70px;
+    height:50px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 30px;
+    margin-left: 50px;
+    color: white;
+}
