@@ -11,10 +11,22 @@ let toggleSignIn = ()=>{
     let signin = document.getElementById('SignIn');
     signin.classList.toggle("active")
 }
-toggleSignUp()
 
-//localStorage :
+//localStorage for change SignIn -> SignUp :
+if(JSON.parse(localStorage.getItem('SignUp')) == openSignUp ){
+    let toggleSignUp = ()=>{
+        let blur = document.getElementById('blur');
+        blur.classList.toggle("active")
+        let signup = document.getElementById('SignUp');
+        signup.classList.toggle("active")
+    }
+    toggleSignUp()
+}
 
+
+
+
+//list localStorage:
 let user = localStorage.getItem("user")
 let userlist = []
 if (user) {

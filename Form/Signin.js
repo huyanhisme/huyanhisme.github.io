@@ -7,10 +7,17 @@ let toggleSignIn = () => {
 };
 toggleSignIn();
 
-let ChangeSignUp = document.getElementById("ChangeSignUp");
+let closeSign = document.getElementById("close");
+    closeSign.addEventListener("click", ()=>{
+        toggleSignIn();
+        localStorage.setItem("SignUp",'closeSignUp')
+        setTimeout(function(){ location.assign("./Welcome.html")}, 150);
+    })
+let ChangeSignUp = document.getElementById('ChangeSignUp')
     ChangeSignUp.addEventListener("click", ()=>{
         toggleSignIn();
-        setTimeout(function(){ location.assign("./Welcome.html")}, 150);
+        localStorage.setItem("SignUp",'openSignUp')
+        setTimeout(function(){ location.assign("./Welcome.html")}, 150)
     })
 
 
