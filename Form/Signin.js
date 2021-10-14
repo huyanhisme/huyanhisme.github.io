@@ -11,13 +11,12 @@ let closeSign = document.getElementById("close");
     closeSign.addEventListener("click", ()=>{
         toggleSignIn();
         localStorage.setItem("SignUp",'closeSignUp')
-        setTimeout(function(){ location.assign("./Welcome.html")}, 150);
+        setTimeout(()=>{ location.assign("./Welcome.html")}, 150);
     })
-let ChangeSignUp = document.getElementById('ChangeSignUp')
-    ChangeSignUp.addEventListener("click", ()=>{
+let changeSignUp = document.getElementById("changeSignUp")
+    changeSignUp.addEventListener("click", ()=>{
         toggleSignIn();
-        localStorage.setItem("SignUp",'openSignUp')
-        setTimeout(function(){ location.assign("./Welcome.html")}, 150)
+        localStorage.setItem("SignUp",1)
     })
 
 

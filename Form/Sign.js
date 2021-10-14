@@ -13,13 +13,13 @@ let toggleSignIn = ()=>{
 }
 
 //localStorage for change SignIn -> SignUp :
-if(JSON.parse(localStorage.getItem('SignUp')) == openSignUp ){
-    let toggleSignUp = ()=>{
-        let blur = document.getElementById('blur');
-        blur.classList.toggle("active")
-        let signup = document.getElementById('SignUp');
-        signup.classList.toggle("active")
-    }
+if(JSON.parse(localStorage.getItem('SignUp')) == 1){
+    // let toggleSignUp = ()=>{
+    //     let blur = document.getElementById('blur');
+    //     blur.classList.toggle("active")
+    //     let signup = document.getElementById('SignUp');
+    //     signup.classList.toggle("active")
+    // }
     toggleSignUp()
 }
 
