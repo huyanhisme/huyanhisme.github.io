@@ -9,55 +9,111 @@
     <title>SoundCloud</title>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
     <link href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./splide.min.css">
     <link rel="stylesheet" href="./Home.css">
 
 
 </head>
 
 <body>
-    <div class="banner">
-        <div class="nav">
-            <div class="nav_left">
-                <div class="logo"></div>
-                <div class="menu_left">
-                    <ul>
-                        <li><a href="./Home.html">Home</a></li>
-                        <li><a href="../Stream/Stream.html">Stream</a></li>
-                        <li><a href="../Library/Library.html">Library</a></li>
-                    </ul>
+    <div class="bg_web">
+        <div class="banner">
+            <div class="nav">
+                <div class="nav_left">
+                    <div class="logo"></div>
+                    <div class="menu_left">
+                        <ul>
+                            <li><a href="./Home.html">Home</a></li>
+                            <li><a href="../Stream/Stream.html">Stream</a></li>
+                            <li><a href="../Library/Library.html">Library</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav_middle">
+                    <form class="nav_form" action="">
+                        <input name="search" type="search" placeholder="Search">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+                <div class="nav_right">
+                    <div class="user">
+                        <div class="user_ava"></div>
+                        <div class="user_name">Huyanh</div>
+                    </div>
+
+                    <div onclick="toggleNoti()" class="noti">
+                    </div>
+                    <div onclick="toggleMess()" class="message "></div>
+                    <div onclick="toggleSet()" class="setting ">
+
+                    </div>
                 </div>
             </div>
-            <div class="nav_middle">
-                <form class="nav_form" action="">
-                    <input name="search" type="search" placeholder="Search">
-                    <button type="submit"></button>
-                </form>
-            </div>
-            <div class="nav_right">
-                <div class="user">
-                    <div class="user_ava"></div>
-                    <div class="user_name">Huyanh</div>
+
+        </div>
+        <div id="show_dropdown" class="dropdown_click">
+
+        </div>
+        <div id="dropdown_set" class="dropdown_set">
+
+        </div>
+
+        <div class="theme_container">
+            <div class="theme_left ">
+                <h2>More of what you like</h2>
+                <p>Suggestions based on what you've liked or played</p>
+                <div class="splide">
+                    <div class="splide__track">
+                        <ul id="list_like" class="list splide__list">
+
+                        </ul>
+                    </div>
                 </div>
 
-                <div onclick="toggleNoti()" class="noti">
+                <h2>Charts: Top 50</h2>
+                <p>The most played tracks on SoundCloud this week</p>
+                <div class="splide">
+                    <div class="splide__track">
+                        <ul id="list_top" class="list splide__list">
+
+                        </ul>
+                    </div>
                 </div>
-                <div onclick="toggleMess()" class="message"></div>
-                <div onclick="toggleSet()" class="setting"></div>
+                <h2>Charts: New & hot</h2>
+                <p>Up-and-coming tracks on SoundCloud</p>
+                <div class="splide">
+                    <div class="splide__track">
+                        <ul id="list_new" class="list splide__list">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="theme_right">
+                <div class="right_content">
+                    <h3>
+                        <span class="icon"></span>
+                        <span class="text">Artists you should follow</span>
+                        <span class="option">Refresh list</span>
+                    </h3>
+                    <div class="user_sidebar">
+                        <div>
+                            <ul class="user_content">
+                                <li class="user_1"></li>
+                                <li class="user_2"></li>
+                                <li class="user_3"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-    </div>
-    <div id="show_dropdown" class="dropdown_click">
+        <script src="./splide.min.js"></script>
+        <script src="./Home.js"></script>
+        <script src="./Songs.js"></script>
+        <script src="./User.js"></script>
         
-    </div>
-
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <script src="./Home.js"></script>
 </body>
 
 </html>

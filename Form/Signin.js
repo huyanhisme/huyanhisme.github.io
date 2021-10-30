@@ -40,7 +40,7 @@ Signin.onsubmit = function (e) {
         sweetalert("success", "Signed in successfully");
         setTimeout(function () {
           location.assign("../Home/Home.html");
-        }, 500);
+        }, 2000);
       } else {
         sweetalert("error", "Wrong password or email");
       }

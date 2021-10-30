@@ -12,8 +12,8 @@ let toggleSignIn = ()=>{
     signin.classList.toggle("active")
 }
 
-//localStorage for change SignIn -> SignUp :
-if(JSON.parse(localStorage.getItem('SignUp')) == 1){
+// //localStorage for change SignIn -> SignUp :
+if(localStorage.getItem('SignUp') == 1){
     toggleSignUp()
 }
 
@@ -61,6 +61,11 @@ Signup.onsubmit = function (e) {
         error("#passworderror", "Password must be less than 12 characters");
         validate = false;
     }
+    for (let i = 0; i < userlist.length; i++) {
+    if (userlist[i].email == email) {
+        sweetalert("error", "Registered email");
+        validate = false;
+        } }
     
     if(validate){
         
@@ -70,6 +75,7 @@ Signup.onsubmit = function (e) {
         }
         userlist.push(user)
         localStorage.setItem("user",JSON.stringify(userlist))
+        localStorage.setItem("SignUp",2)
         location.assign("./Signin.html")
     }
     
@@ -86,6 +92,8 @@ Signin.onsubmit = function (e) {
     let email = Signin.email.value;
     let password = Signin.password.value;
 
+    console.log(email,password);
+
 
     for (let i = 0; i < userlist.length; i++) {
         if (userlist[i].email == email) {
@@ -93,7 +101,7 @@ Signin.onsubmit = function (e) {
                 sweetalert("success", "Signed in successfully");
                 setTimeout(function(){ location.assign("../Home/Home.html")}, 2000);
             } else {
-                sweetalert("error","Wrong password or email")
+                sweetalert("error","This password is incorrect")
             }
             break
         } else {

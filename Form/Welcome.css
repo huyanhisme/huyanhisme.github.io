@@ -16,7 +16,7 @@ a{
   filter: blur(10px);
 }
 .theme .banner {
-  width: 87%;
+  width: 85%;
   margin: 0 auto;
   padding-bottom: 100px;
 }
@@ -134,7 +134,7 @@ a{
   cursor: pointer;
 }
 .theme .devices {
-  width: 87%;
+  width: 85%;
   margin: 0 auto;
   display: flex;
 }
@@ -192,7 +192,7 @@ a{
   display: inline-block;
 }
 .theme .anotherSign {
-  width: 87%;
+  width: 85%;
   margin: 0 auto;
   background-color: #fff;
   display: flex;
@@ -240,7 +240,7 @@ a{
   cursor: pointer;
 }
 .footer {
-  width: 87%;
+  width: 85%;
   background-color: white;
   margin: 0 auto;
 }
@@ -258,7 +258,7 @@ a{
 }
 #SignUp {
   position: fixed;
-  top: 30%;
+  top: 10%;
   left: 50%;
   background: #fff;
   transform: translate(-50%, -50%);
@@ -313,7 +313,7 @@ a{
 }
 #SignIn {
   position: fixed;
-  top: 30%;
+  top: 10%;
   left: 50%;
   background: #fff;
   transform: translate(-50%, -50%);
