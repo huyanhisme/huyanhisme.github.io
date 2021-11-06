@@ -5,56 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stream</title>
-    <link rel="stylesheet" href="Stream.css">
-    <link rel="shortcut icon" href="../Home/sci.png" type="image/x-icon">
+    <link href="https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2cadd14bdb.ico" rel="icon">
+    <title>SoundCloud</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./Home.css">
+    <link rel="stylesheet" href="./Stream.css">
 </head>
 
 <body>
-    <div class="nav">
-        <ul>
-            <li><a href="../Home/Home.html"><i id="logo" class="fab fa-soundcloud"></i></a></li>
-            <li><a class="active" style="padding:16px 30px" href="../Home/Home.html">Home</a></li>
-            <li><a style="padding:16px 30px" href="../Stream/Stream.html">Stream</a></li>
-            <li><a style="padding:16px 30px" href="../Library/Library.html">Library</a></li>
-            <li class="dropdown">
-                <a class="dropbtn" style="padding:16px 30px;" href="">
-                    <i class="fas fa-bell"></i>
-                </a>
-                <div class="dropdown-content">
-                    <p class="noti">Notifications</p>
-                    <p class="notifi">No notifications</p>
+    <div class="bg_web">
+        <div class="banner">
+            <div class="nav">
+                <div class="nav_left">
+                    <div class="logo"></div>
+                    <div class="menu_left">
+                        <ul>
+                            <li><a href="../Home/Home.html">Home</a></li>
+                            <li><a href="../Stream/Stream.html">Stream</a></li>
+                            <li><a href="../Library/Library.html">Library</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </li>
-            <li class="dropdown1">
-                <a class="dropbtn1" style="padding:16px 20px" href="">
-                    <i class="far fa-envelope"></i>
-                </a>
-                <div class="dropdown-content1">
-                    <p class="noti1">Messages</p>
-                    <p class="notifi1" style="padding-left: 85px;">No Messages</p>
+                <div class="nav_middle">
+                    <form class="nav_form" action="">
+                        <input name="search" type="search" placeholder="Search">
+                        <button type="submit"></button>
+                    </form>
                 </div>
-            </li>
-            <li class="dropdown2">
-                <a class="dropbtn2" style="padding:16px 10px 16px 10px" href="">
-                    <i class="fas fa-ellipsis-h"></i>
-                </a>
-                <div class="dropdown-content2">
-                    <a href="https://soundcloud.com/pages/contact">
-                        <p class="noti2">About us</p>
-                    </a>
-                    <a href="https://soundcloud.com/terms-of-use">
-                        <p class="noti2">Legal</p>
-                    </a>
-                    <a href="https://soundcloud.com/pages/copyright">
-                        <p class="noti2">Copyright</p>
-                    </a>
-                    <a href="/Home/profile.html">
-                        <p class="noti2">Profile</p>
-                    </a>
+                <div class="nav_right">
+                    <div class="user">
+                        <div class="user_ava"></div>
+                        <div class="user_name">Huyanh</div>
+                    </div>
+
+                    <div onclick="toggleNoti()" class="noti">
+                    </div>
+                    <div onclick="toggleMess()" class="message "></div>
+                    <div onclick="toggleSet()" class="setting ">
+
+                    </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+
+        </div>
+        <div id="show_dropdown" class="dropdown_click">
+        </div>
+        <div id="dropdown_set" class="dropdown_set">
+        </div>
     </div>
     <div class="theme1">
         <div class="a">
@@ -70,7 +68,7 @@
             <div class="playlist">
                 <a
                     href="https://soundcloud.com/ho-ng-tr-n-95017160/chi-muon-ben-em-luc-nay-jiki-x-ft-huy-vac-lofi-version"><img 
-                        src="ha.jpg" alt=""></a>
+                        src="./img/ha.jpg" alt=""></a>
                 <div class="pl">
                     <div class="ds">
                         <a
@@ -100,7 +98,7 @@
             <p class="tag">#henemkiepsau #duyphuc #la #original</p>
             <div class="playlist">
                 <a href="https://soundcloud.com/l-thu-trang-14995540/original-hen-em-kiep-sau-la-ft-tib-ft-duy-phuc"><img
-                        src="he.jpg" alt=""></a>
+                        src="./img/he.jpg" alt=""></a>
                 <div class="pl">
                     <div class="ds">
                         <a
@@ -129,7 +127,7 @@
             <p class="up">Sơn Tùng MTP posted a track Posted 1 year ago</p>
             <p class="tag">#chungtacuahientai #sontungmtp #mtp</p>
             <div class="playlist">
-                <a href="https://soundcloud.com/h-ng-quang-834488889/chung-ta-cua-hien-tai"><img src="chung.jpg"
+                <a href="https://soundcloud.com/h-ng-quang-834488889/chung-ta-cua-hien-tai"><img src="./img/chung.jpg"
                         alt=""></a>
                 <div class="pl">
                     <div class="ds">
@@ -157,7 +155,7 @@
             <p class="up">Sơn Tùng MTP posted a track Posted 3 months ago</p>
             <p class="tag">#muonroimasaocon #sontungmtp #mtp #audio</p>
             <div class="playlist">
-                <a href="https://soundcloud.com/duy-s-n-ph-m/muon-roi-ma-sao-con"><img src="m.jpg" alt=""></a>
+                <a href="https://soundcloud.com/duy-s-n-ph-m/muon-roi-ma-sao-con"><img src="./img/m.jpg" alt=""></a>
                 <div class="pl">
                     <div class="ds">
                         <a href="https://soundcloud.com/duy-s-n-ph-m/muon-roi-ma-sao-con"><i id="play"
@@ -184,7 +182,7 @@
             <p class="up">Quang Đăng Trần posted a track Posted 2 months ago</p>
             <p class="tag">#quangdangtran #chaukhaiphong #trodua </p>
             <div class="playlist">
-                <a href="https://soundcloud.com/user-362958101-498657551/tro-dua"><img src="mi.jpg" alt=""></a>
+                <a href="https://soundcloud.com/user-362958101-498657551/tro-dua"><img src="./img/mi.jpg" alt=""></a>
                 <div class="pl">
                     <div class="ds">
                         <a href="https://soundcloud.com/user-362958101-498657551/tro-dua"><i id="play"
@@ -216,7 +214,7 @@
                 follow
             </p>
             <div class="d">
-                <a href="https://vi.wikipedia.org/wiki/Soobin_Ho%C3%A0ng_S%C6%A1n"><img class="img1" src="soo.jpg"
+                <a href="https://vi.wikipedia.org/wiki/Soobin_Ho%C3%A0ng_S%C6%A1n"><img class="img1" src="./img/soo.jpg"
                         alt=""></a>
                 <div class="e">
                     <a href="https://vi.wikipedia.org/wiki/Soobin_Ho%C3%A0ng_S%C6%A1n">
@@ -228,7 +226,7 @@
                 </div>
             </div>
             <div class="d">
-                <a href="https://en.wikipedia.org/wiki/S%C6%A1n_T%C3%B9ng_M-TP"><img class="img1" src="st.png"
+                <a href="https://en.wikipedia.org/wiki/S%C6%A1n_T%C3%B9ng_M-TP"><img class="img1" src="./img/st.png"
                         alt=""></a>
                 <div class="e">
                     <a href="https://en.wikipedia.org/wiki/S%C6%A1n_T%C3%B9ng_M-TP">
@@ -240,7 +238,7 @@
                 </div>
             </div>
             <div class="d">
-                <a href="https://vi.wikipedia.org/wiki/Chillies_(ban_nh%E1%BA%A1c)"><img class="img1" src="ch.png"
+                <a href="https://vi.wikipedia.org/wiki/Chillies_(ban_nh%E1%BA%A1c)"><img class="img1" src="./img/ch.png"
                         alt=""></a>
                 <div class="e">
                     <a href="https://vi.wikipedia.org/wiki/Chillies_(ban_nh%E1%BA%A1c)">
@@ -254,7 +252,7 @@
             <p style="border-bottom: 2px solid whitesmoke;margin-top: 20px;padding-bottom:10px;"><i
                     class="fas fa-heart"></i> 125 likes </p>
             <div class="d">
-                <a href="https://soundcloud.com/gin-845741792/m-nh-anh-n-i-n-y-lofi-ver"><img class="img2" src="mi.jpg"
+                <a href="https://soundcloud.com/gin-845741792/m-nh-anh-n-i-n-y-lofi-ver"><img class="img2" src="./img/mi.jpg"
                         alt=""></a>
                 <div class="e">
                     <p>Dương Văn Phú</p>
@@ -269,7 +267,7 @@
             </div>
             <div class="d">
                 <a href="https://soundcloud.com/nguy-n-th-y-duy-n-892493063/m-a-k-c-lofi-ver-reddy-x-freak"><img
-                        class="img2" src="mu.jpg" alt=""></a>
+                        class="img2" src="./img/mu.jpg" alt=""></a>
                 <div class="e">
                     <p>@thuyduyenn</p>
                     <a href="https://soundcloud.com/nguy-n-th-y-duy-n-892493063/m-a-k-c-lofi-ver-reddy-x-freak">
@@ -282,7 +280,7 @@
             </div>
             <div class="d">
                 <a href="https://soundcloud.com/h-ng-v-787579738/co-ay-noi-lofi-ver-ngo-anh-dat-x-freak-d"><img
-                        class="img2" src="co.jpg" alt=""></a>
+                        class="img2" src="./img/co.jpg" alt=""></a>
                 <div class="e">
                     <p>huwng</p>
                     <a href="https://soundcloud.com/h-ng-v-787579738/co-ay-noi-lofi-ver-ngo-anh-dat-x-freak-d">
@@ -297,7 +295,7 @@
                     class="fas fa-water"></i> Hot Songs</p>
             <div class="d">
                 <a href="https://soundcloud.com/hieuz-music/duong-toi-cho-em-ve-lofi-ver-buitruonglinh-x-hieuz"><img
-                        class="img2" src="duo.jpg" alt=""></a>
+                        class="img2" src="./img/duo.jpg" alt=""></a>
                 <div class="e">
                     <p>Hieuz</p>
                     <a href="https://soundcloud.com/hieuz-music/duong-toi-cho-em-ve-lofi-ver-buitruonglinh-x-hieuz">
@@ -310,7 +308,7 @@
             </div>
             <div class="d">
                 <a href="https://soundcloud.com/haiyen-do-272773691/ha-con-vuong-nang-lofi-ver"><img class="img2"
-                        src="ha.jpg" alt=""></a>
+                        src="./img/ha.jpg" alt=""></a>
                 <div class="e">
                     <p>Longg</p>
                     <a href="https://soundcloud.com/haiyen-do-272773691/ha-con-vuong-nang-lofi-ver">
@@ -322,7 +320,7 @@
                 </div>
             </div>
             <div class="d">
-                <a href="https://soundcloud.com/tuong-to-2/c-l-anh-ch-a-t-ng-lofi-ver"><img class="img2" src="cle.jpg"
+                <a href="https://soundcloud.com/tuong-to-2/c-l-anh-ch-a-t-ng-lofi-ver"><img class="img2" src="./img/cle.jpg"
                         alt=""></a>
                 <div style="border: none;" class="e">
                     <p>Hạnh Florentilo</p>
@@ -336,11 +334,11 @@
             </div>
             <div style="border-top: 2px solid whitesmoke;" class="e">
                 <div class="d">
-                    <a href="https://apps.apple.com/us/app/soundcloud/id336353151"><img class="img3" src="app.png"
+                    <a href="https://apps.apple.com/us/app/soundcloud/id336353151"><img class="img3" src="./img/app.png"
                             alt=""></a>
                     <a
                         href="https://play.google.com/store/apps/details?id=com.soundcloud.android&hl=us&referrer=utm_source%3Dsoundcloud%26utm_medium%3Dweb%26utm_campaign%3Dweb_xsell_discover_page"><img
-                            class="img3" src="gg.png" alt=""></a>
+                            class="img3" src="./img/gg.png" alt=""></a>
                 </div>
                 <div class="footer">
                     <a href="https://soundcloud.com/terms-of-use"><span style="font-size: 12px;">Legal
@@ -360,6 +358,10 @@
     </div>
 
     <script src="https://kit.fontawesome.com/cb93f667bb.js" crossorigin="anonymous"></script>
+    <script src="../Home/Home.js"></script>
+    <script src="../Home/Songs.js"></script>
+    <script src="../Home/Playmusic.js"></script>
+    <script src="../Home/User.js"></script>
 </body>
 
 </html>

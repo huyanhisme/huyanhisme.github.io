@@ -118,3 +118,20 @@ let renderSet = () => {
    </div>`;
   content.innerHTML = html;
 };
+
+
+document.querySelector(".repeat").addEventListener("click", function(){
+  document.querySelector(".repeat").style.backgroundImage = "url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iI2Y1MCIgZD0iTTExLjAyNyAxNmE0LjU1IDQuNTUgMCAwIDAgLjIzIDJIOUE2IDYgMCAxIDEgOSA2aDNWNGw0IDMtNCAzVjhIOWE0IDQgMCAxIDAgMCA4aDIuMDI3em03LjcyNS0yLjYxYTMuOTk3IDMuOTk3IDAgMCAwLTEuNjQ4LTQuNzkybDEuNzctMS4xOC4wMi4wMTdBNS45ODcgNS45ODcgMCAwIDEgMjEgMTJjMCAxLjMtLjQxMyAyLjUwMy0xLjExNiAzLjQ4NmE0LjQ5NiA0LjQ5NiAwIDAgMC0xLjEzMi0yLjA5NnoiLz48cGF0aCBmaWxsPSIjZjUwIiBkPSJNMTUuNSAyMGEzLjUgMy41IDAgMSAxIDAtNyAzLjUgMy41IDAgMCAxIDAgN3ptLS41LTV2NGgxdi00aC0xem0tMSAwdjFoMXYtMWgtMXoiLz48L3N2Zz4K)";
+})
+
+document.querySelector("#click_volume").addEventListener("click", function(){
+  document.querySelector(".volume_dropdown").classList.toggle("active")
+  if(document.querySelector(".volume_dropdown").classList == "volume_dropdown active"){
+    document.querySelector("#click_volume").style.color = "#f50"
+  }if(document.querySelector(".volume_dropdown").classList == "volume_dropdown"){
+    document.querySelector("#click_volume").style.color = "#333"
+  }
+  
+})
+
+
