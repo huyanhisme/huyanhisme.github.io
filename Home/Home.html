@@ -66,16 +66,7 @@
                             <div class="splide">
                                 <div class="splide__track">
                                     <div id="list_like" class="splide__list">
-                                        <!-- <li class="splide__slide">
-                                            <div id="${query + i}" class="card">
-                                                <img style="width:175px; height:175px" src="https://i1.sndcdn.com/artworks-000641537524-cb3gt7-t200x200." alt="">
-                                                <audio class="${query + i}audio" id="main_audio" src="${
-                                              data[i].audio
-                                            }"></audio>
-                                            </div>
-                                            <h2>${data[i].name}</h2>
-                                            <p>${data[i].title}</p>
-                                            </li> -->
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -164,11 +155,12 @@
                 </div>
             </div>
         </div>
+        <audio id="main_audio" class=""></audio>       
         <div class="banner_controls">
             <div class="banner_content">
                 <div class="controls wrapper">
                     <button class="skip_prev"></button>
-                    <div id="play_btn" class="play-pause">
+                    <div id="play_btn" class="play-pause paused">
                         <i class="material-icons">play_arrow</i>
                     </div>
                     <button class="skip_next"></button>
@@ -177,13 +169,13 @@
                 </div>
                 <div class="progress">
                     <div class="timer">
-                        <span style="margin-right: -10px;">0:00</span>
+                        <span style="margin-right: -10px;" class="currentTime">0:00</span>
                         <div class="progress_area">
                             <div class="progress_bar">
 
                             </div>
                         </div>
-                        <span style="margin-left: -10px;color:#333">4:32</span>
+                        <span style="margin-left: -10px;color:#333" class="duration">0:00</span>
                         <i id="click_volume" class="material-icons">volume_up
                         </i>
                     </div>

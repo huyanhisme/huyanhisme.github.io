@@ -110,6 +110,9 @@ let infoSongs = [
   },
 ];
 
+let nextPlaySong = 0;
+let repeatPlaySong = 2;
+
 function mixData(data) {
   let result1 = [];
   let result2 = [];
@@ -147,6 +150,7 @@ function mixData(data) {
   return result;
 }
 
+const au = document.getElementById("main_audio");
 const dataAffterMixed = mixData(infoSongs);
 
 let renderData = (query, data) => {
@@ -156,7 +160,7 @@ let renderData = (query, data) => {
   for (let i = 0; i < data.length; i++) {
     let html = `<li class="splide__slide">
     <div id="${query + i}" class="card">
-        <img style="width:175px; height:175px" src="${data[i].img}" alt="">
+        <img class="border_img" style="width:175px; height:175px" src="${data[i].img}" alt="">
         <audio class="${query + i}audio" id="main_audio" src="${
       data[i].audio
     }"></audio>
@@ -169,48 +173,161 @@ let renderData = (query, data) => {
 
   //play music function
   for (let i = 0; i < data.length; i++) {
-    let music = document.querySelector(`.${query + i}audio`);
     document.querySelector(`#${query + i}`).addEventListener("click", () => {
-      playPauseBtn.querySelector("i").innerText = "pause";
-      music.play();
+      nextPlaySong = i;
+      au.src = data[i].audio;
+      playPauseBtn.querySelector("i").innerText = "paused";
+      au.play();
 
       let song = document.querySelector(".song");
       let htmlSong = `<img src="${data[i].img}" alt="">
       <div class="title">
-        <p>${data[i].title}</p>
-        <h2>${data[i].name}</h2>
+      <p>${data[i].title}</p>
+      <h2>${data[i].name}</h2>
       </div>
       <button class="like"></button>
       <i class="material-icons">queue_music</i>`;
       song.innerHTML = htmlSong;
-      //next music
-      nextBtn.addEventListener("click", () => {
-        music+
-        console.log(music);
-      });
     });
   }
 };
 
-// const wrapper = document.querySelector(".wrapper");
 const playPauseBtn = document.querySelector(".play-pause");
 const nextBtn = document.querySelector(".skip_next");
-// const mainAudio = document.querySelector("#main_audio");
+const prevBtn = document.querySelector(".skip_prev");
+const randomBtn = document.querySelector(".random");
+const repeatBtn = document.querySelector(".repeat");
+const progressArea = document.querySelector(".progress_area");
+const progressBar = document.querySelector(".progress_bar");
 
-// //paused music function
-// let pauseMusic = () => {
-//   mainAudio.pause();
-// };
+//pause music function
+playPauseBtn.addEventListener("click", () => {
+  if (au.duration > 0 && !au.paused) {
+    au.pause();
+    playPauseBtn.querySelector("i").innerText = "play_arrow";
+  } else {
+    au.play();
+    playPauseBtn.querySelector("i").innerText = "paused";
+  }
+});
 
-// playPauseBtn.addEventListener("click", () => {
-//   playPauseBtn.querySelector("i").innerText = "play_arrow";
-//   pauseMusic();
-// });
+//next music function
+nextBtn.addEventListener("click", () => {
+  nextPlaySong++;
+  au.src = infoSongs[nextPlaySong].audio;
+  au.play();
+});
+
+//prev music function
+prevBtn.addEventListener("click", () => {
+  nextPlaySong--;
+  au.src = infoSongs[nextPlaySong].audio;
+  au.play();
+});
+
+//random music function
+randomBtn.addEventListener("click", () => {
+  randomSong = Math.floor(Math.random(infoSongs) * 16);
+  au.src = infoSongs[randomSong].audio;
+  au.play();
+  console.log(au);
+  randomBtn.style.backgroundImage =
+    "url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iI2Y1MCIgZD0iTTEzLjU4NiAxN2wtOC04SDNWN2gzLjQxNGw4IDhIMTd2MmgtMy40MTR6TTMgMTVoMi41ODZsMi4yMDctMi4yMDcgMS40MTQgMS40MTQtMi41MDEgMi41MDEtLjI5My4yOTJIM3YtMnptMTQtNmgtMi41ODZsLTIuMjA3IDIuMjA3LTEuNDE0LTEuNDE0TDEzLjU4NiA3SDE3djJ6bTQgN2wtNCAzdi02bDQgM3ptMC04bC00IDNWNWw0IDN6Ii8+PC9zdmc+Cg==)";
+});
+
+//repeat music function
+repeatBtn.addEventListener("click", () => {
+  if (repeatPlaySong > 0) {
+    au.play();
+    repeatPlaySong--;
+  } else {
+    au.pause();
+  }
+});
+
+//update   progress bar function
+au.addEventListener("timeupdate", (e) => {
+  const currentTime = e.target.currentTime;
+  const duration = e.target.duration;
+  let progressWidth = (currentTime / duration) * 100;
+  progressBar.style.width = `${progressWidth}%`;
+
+  let musicCurrentTime = document.querySelector(".currentTime");
+  let musicDuration = document.querySelector(".duration");
+
+  au.addEventListener("loadeddata", () => {
+    let audioDuration = au.duration;
+    let totalMin = Math.floor(audioDuration / 60);
+    let totalSec = Math.floor(audioDuration % 60);
+    if (totalSec < 10) {
+      totalSec = `0${totalSec}`;
+    }
+    musicDuration.innerText = `${totalMin}:${totalSec}`;
+  });
+
+  let currentMin = Math.floor(currentTime / 60);
+  let currentSec = Math.floor(currentTime % 60, 2);
+  if (currentSec < 10) {
+    currentSec = `0${currentSec}`;
+  }
+  musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
+
+  if (currentTime == duration) {
+    nextPlaySong++;
+    au.src = infoSongs[nextPlaySong].audio;
+    au.play();
+
+    for (let i = 0; i < infoSongs.length; i++) {
+      let song = document.querySelector(".song");
+      let htmlSong = `<img src="${infoSongs[i].img}" alt="">
+      <div class="title">
+      <p>${infoSongs[i].title}</p>
+      <h2>${infoSongs[i].name}</h2>
+      </div>
+      <button class="like"></button>
+      <i class="material-icons">queue_music</i>`;
+      song.innerHTML = htmlSong;
+    }
+  }
+});
+
+progressArea.addEventListener("click", (e) => {
+  let progressWidthValue = progressArea.clientWidth;
+  let clickedOffSetx = e.offsetX;
+  let songDuration = au.duration;
+
+  au.currentTime = (clickedOffSetx / progressWidthValue) * songDuration;
+});
 
 renderData("list_like", dataAffterMixed.data1);
 renderData("list_top50", dataAffterMixed.data2);
 renderData("list_new", dataAffterMixed.data3);
 
-// pauseMusic("list_like", dataAffterMixed.data1);
-// pauseMusic("list_top50", dataAffterMixed.data2);
-// pauseMusic("list_new", dataAffterMixed.data3);
+
+let searching = document.querySelector(".nav_form")
+
+// searching.onsubmit = function (e) {
+//   e.preventDefault();
+
+//   let searchInput = searching.search.value;
+
+//   for(let i = 0; i < infoSongs.length; i++){
+//     if(searchInput === infoSongs[i].name ){
+      
+//     }
+//   }
+// };
+
+fetch("https://shazam.p.rapidapi.com/songs/list-artist-top-tracks?id=40008598&locale=en-US", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "shazam.p.rapidapi.com",
+		"x-rapidapi-key": "0fcf4beeddmsh8fb66d56ab426c2p10c565jsnc79497f5023e"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});

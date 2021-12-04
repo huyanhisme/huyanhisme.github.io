@@ -92,7 +92,6 @@ Signin.onsubmit = function (e) {
     let email = Signin.email.value;
     let password = Signin.password.value;
 
-    console.log(email,password);
 
 
     for (let i = 0; i < userlist.length; i++) {

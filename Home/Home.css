@@ -797,6 +797,8 @@ li {
   transform: translateY(34%);
   color: #333;
   cursor: pointer;
+  background: #f2f2f2;
+  width: 24px;
 }
 .skip_next {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzMzMyIgZD0iTTcgMThsOC02LTgtNnYxMnptOC0xMnYxMmgyVjZoLTJ6Ii8+PC9zdmc+Cg==);
@@ -921,9 +923,10 @@ li {
   height: 1px;
   line-height: 46px;
   border-radius: 50px;
+  cursor: pointer;
 }
 .progress .progress_bar {
-  width: 50%;
+  width: 0%;
   background-color: #f50;
   height: 1px;
   border-radius: 50px;
